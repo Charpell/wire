@@ -1,91 +1,92 @@
 @import "../../theme";
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
 
-.login-page {
+.login-page{
     display: flex;
     flex-direction: row;
+    height: 100%;
+    width: 100%;
 
-
-    .left-column {
-        flex: 1;
+    .left-container{
+        display: flex;
         flex-direction: column;
+        height: 100vh;
+        width: 20vw;
+        
+        .andela-logo{
+            margin: 20% 0% 0% 10%;
+            width: 7.7vw;
+            height: 4.5vh;
+        }
 
-        .left-container{
-           
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            width: 35vw;
+        .welcome-text{
+            margin-top: 40vh;
+            margin-left: 2vw;
+            width: 70%;
+
+
+            p{
+                font-family: 'DIN Pro Extra Light';
+                font-size: 25px;
+
+                .wire{
+                    font-family: 'DIN Pro Light';
+                    font-style: italic;
+                }
+                
+            }
+        }
+        .button{
+            
+            .google-logo{
+                display: inline-block;
+                width: 3vw;
+                height: 60%;
+                padding: 0%;
+                margin-left: 0%;
+
+            }
+            .label{
+                display: inline-block;
+            }
+        }
+
+     }
+        
+
+
+    .right-container{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 80vw;
+
+
+        .landing-image{
             height: 100vh;
-            background-color: #f1f6f8;  
-            
-            .andela-logo{
-                
-                flex-direction: column;
-                // margin: 10% 0% 0% 10%;
-                width: 13rem;
-                height: 4rem;
-            }
-            
-            .welcome-text{
-                flex-direction: row;
-                // margin: 60% 10% 0% 10%;
-                width: 55%;
-                position: relative;
-
-                p{
-                    font-size: 25px;
-                    font-family: 'PT Sans';
-                    padding: 0%;
-                    font-weight: 300;
-                    letter-spacing: 1.15px;
-                    line-height: 1.44;
-
-                }
-                    .wire{
-                        font-style: italic;
-                    }
-
-                }
-            .button {
-                display: flex;
-                flex-direction: row;
-                
-
-                .google-logo {
-                    
-                    display: inline-block;
-                    width: 3rem;
-                    height: 60%;
-                    box-sizing: border-box;
-                    margin-left: 0%;
-                            }
-                .label {
-                    display: inline-block;
-                    font-family: 'PT Sans';
-                    margin-top: 1.3rem;
-
-
-                }
-  
-                        }
-                    
-            
-                   
+            width: 80vw;
         }
+
+        .right-text{
+            position: absolute;
+            color: #fbaf31;
+            font-size: 40px;
+            font-weight: 500;
+            margin-left: 45vw;
+            margin-top: 23vh;
+
+        }
+        .underline{
+            position: absolute;
+            background-color: #fdb237;
+            width: 7vw;
+            height: 0.5vh;
+            border-radius: 5px;
+            margin-left: 48vw;
+            margin-top: 39vh;
+
+
+        }
+        
+
     }
-
-    .right-column {
-        flex: 1;
-        flex-direction: column;
-
-            .landing-image{
-
-                flex-direction: column;
-                align-items: center;
-                width: 65vw;
-                height: 100vh;
-
-            }
-        }
 }

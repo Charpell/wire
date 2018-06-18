@@ -36,6 +36,42 @@ jobs:
           name: Build and deploy
           command: |
             bash ./.circleci/deploy.sh
+    build:
+      docker:
+        - image: circleci/node:9.8.0
+
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Install packages
+            command: yarn install
+        - run:
+            name: Run tests
+            command: yarn test
+        - run:
+            name: Collect test coverage
+            command: yarn coveralls
+    deploy:
+        docker:
+            - image: circleci/node:9.8.0
+        environment:
+            GOOGLE_PROJECT_ID: bench-projects
+            GOOGLE_COMPUTE_ZONE: europe-west1-b
+        steps:
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Build application artifacts
+                command: |
+                    sudo yarn add webpack-cli webpack@3.8.1
+                    yarn install
+                    yarn build
+            - run:
+                name: Build and deploy
+                command: |
+                    chmod +x .circleci/deploy.sh
+                    ./.circleci/deploy.sh
 
 workflows:
   version: 2

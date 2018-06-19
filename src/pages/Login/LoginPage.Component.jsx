@@ -34,8 +34,8 @@ class LoginPage extends React.Component {
   render() {
     const styles = {
       button: {
-        width: '14vw',
-        height: '5vh',
+        width: '15rem',
+        height: '3rem',
         position: 'relative',
         marginLeft: '2vw'
       }
